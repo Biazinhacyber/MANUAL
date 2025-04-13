@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notas de uma Amizade</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Notas de uma Amizade</h1>
+      <p>Um presente interativo para Lara</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><button onclick="showPage('inicio')">Início</button></li>
+        <li><button onclick="showPage('regra')">Regras</button></li>
+        <li><button onclick="showPage('casa')">Lar</button></li>
+        <li><button onclick="showPage('hqs')">HQ</button></li>
+        <li><button onclick="showPage('ese')">E se...</button></li>
+        <li><button onclick="showPage('discurso')">Discurso</button></li>
+      </ul>
+    </nav>
+
+    <main id="content">
+      <section id="inicio" class="page active">
+        <h2>Bem-vinda, Lara!</h2>
+        <p>Esse é um cantinho feito com carinho, para guardar nossas histórias, memórias e sentimentos.</p>
+      </section>
+
+      <section id="regra" class="page">
+        <h2>Contrato de Amizade</h2>
+        <ul>
+          <li>Se uma estiver triste, a outra promete aparecer com sorvete e abraço.</li>
+          <li>Se rolar um desentendimento, a gente conversa antes de dormir.</li>
+          <li>Sempre reservar um tempo para estarmos juntas e fortalecermos a amizade.</li>
+          <li>Compartilhar memes, conquistas e desabafos sem julgamento.</li>
+        </ul>
+        <p class="assinatura">Assinado: _____________</p>
+      </section>
+
+      <section id="casa" class="page">
+        <h2>Lar é onde mora o afeto e a bagunça também</h2>
+        <p>Clique nos cômodos e descubra!</p>
+        <div class="casa">
+          <button onclick="mostrarComodo('cozinha')">Cozinha</button>
+          <button onclick="mostrarComodo('sala')">Sala</button>
+          <button onclick="mostrarComodo('quarto')">Quarto</button>
+          <button onclick="mostrarComodo('banheiro')">Banheiro</button>
+          <button onclick="mostrarComodo('varanda')">Varanda</button>
+        </div>
+        <p id="fraseComodo"></p>
+      </section>
+
+      <section id="hqs" class="page">
+        <h2>Se a nossa história fosse contada em uma revista em quadrinhos...</h2>
+        <p>[Aqui virão os quadrinhos, com ilustrações e cenas da nossa história!]</p>
+
+        <h3>Spoiler do futuro em quadrinhos</h3>
+        <p>[Versão mais velhinha de nós duas, ainda amigas, casadas e rindo das mesmas piadas!]</p>
+      </section>
+
+      <section id="ese" class="page">
+        <h2>E se...</h2>
+        <div class="cards">
+          <div class="card">E se a gente tivesse se conhecido em outra vida?</div>
+          <div class="card">E se a gente tivesse uma cafeteria com nome de música?</div>
+          <div class="card">E se a gente morasse uma do lado da outra?</div>
+          <div class="card">E se a gente tivesse uma série só nossa?</div>
+        </div>
+      </section>
+
+      <section id="discurso" class="page">
+        <h2>Se eu fosse discursar...</h2>
+        <p>Lara, se hoje eu fosse a oradora da nossa história, eu falaria sobre o quanto você é importante pra mim...</p>
+        <p>Você me acolhe, me faz rir, me socorre nos piores momentos. Você é a amiga que todo mundo deveria ter. Não a minha Lara, porque essa já é minha, mas uma Lara.</p>
+        <p>Você tem um coração tão lindo e um jeitinho que transforma os dias. Eu te amo. Obrigada por ser você.</p>
+      </section>
+    </main>
+  </div>
+  <audio id="somPorta" src="porta.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
