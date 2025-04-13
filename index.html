@@ -2,85 +2,159 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notas de uma Amizade</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f8f1ff, #fff0f5);
+      color: #333;
+    }
+
+    header {
+      background-color: #8c52ff;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #8c52ff;
+    }
+
+    .btn {
+      background: #8c52ff;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    .btn:hover {
+      background: #6e36d2;
+    }
+
+    .comic-frame {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .comic-box {
+      flex: 1 1 45%;
+      background-color: #fff3f8;
+      border: 2px dashed #d18aff;
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .room {
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #f2e9ff;
+      border-left: 4px solid #8c52ff;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    audio {
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 1rem;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Notas de uma Amizade</h1>
-      <p>Um presente interativo para Lara</p>
-    </header>
 
-    <nav>
-      <ul>
-        <li><button onclick="showPage('inicio')">Início</button></li>
-        <li><button onclick="showPage('regra')">Regras</button></li>
-        <li><button onclick="showPage('casa')">Lar</button></li>
-        <li><button onclick="showPage('hqs')">HQ</button></li>
-        <li><button onclick="showPage('ese')">E se...</button></li>
-        <li><button onclick="showPage('discurso')">Discurso</button></li>
-      </ul>
-    </nav>
+<header>Notas de uma Amizade</header>
 
-    <main id="content">
-      <section id="inicio" class="page active">
-        <h2>Bem-vinda, Lara!</h2>
-        <p>Esse é um cantinho feito com carinho, para guardar nossas histórias, memórias e sentimentos.</p>
-      </section>
+<div class="container">
 
-      <section id="regra" class="page">
-        <h2>Contrato de Amizade</h2>
-        <ul>
-          <li>Se uma estiver triste, a outra promete aparecer com sorvete e abraço.</li>
-          <li>Se rolar um desentendimento, a gente conversa antes de dormir.</li>
-          <li>Sempre reservar um tempo para estarmos juntas e fortalecermos a amizade.</li>
-          <li>Compartilhar memes, conquistas e desabafos sem julgamento.</li>
-        </ul>
-        <p class="assinatura">Assinado: _____________</p>
-      </section>
+  <section>
+    <h2>Se a nossa história fosse contada em uma revista em quadrinhos</h2>
+    <div class="comic-frame">
+      <div class="comic-box">
+        <strong>Cena 1:</strong> Bia e Lara se conhecem no trabalho. Bia está perdida com papéis na mão e Lara aparece oferecendo ajuda com um sorrisão.
+      </div>
+      <div class="comic-box">
+        <strong>Cena 2:</strong> As duas com camisetas com patinha de cachorro e símbolo do autismo, segurando cartazes em um evento. Atrás delas, um banner: “Por um mundo mais justo pros que não têm voz”.
+      </div>
+    </div>
+  </section>
 
-      <section id="casa" class="page">
-        <h2>Lar é onde mora o afeto e a bagunça também</h2>
-        <p>Clique nos cômodos e descubra!</p>
-        <div class="casa">
-          <button onclick="mostrarComodo('cozinha')">Cozinha</button>
-          <button onclick="mostrarComodo('sala')">Sala</button>
-          <button onclick="mostrarComodo('quarto')">Quarto</button>
-          <button onclick="mostrarComodo('banheiro')">Banheiro</button>
-          <button onclick="mostrarComodo('varanda')">Varanda</button>
-        </div>
-        <p id="fraseComodo"></p>
-      </section>
+  <section>
+    <h2>Um spoiler do nosso futuro em quadrinhos</h2>
+    <div class="comic-frame">
+      <div class="comic-box">
+        <strong>2025:</strong> Continuamos grudadas, com nossos projetos sociais. Ainda rindo das nossas piadas internas e tomando chá no fim do expediente.
+      </div>
+      <div class="comic-box">
+        <strong>2040:</strong> Agora casadas (cada uma com sua família), nossos filhos brincam juntos enquanto a gente relembra o início da nossa amizade. Uma das filhas da Bia pergunta: “Mãe, a titia Lara é sua irmã?” e a gente responde em coro: “Quase isso!”
+      </div>
+    </div>
+  </section>
 
-      <section id="hqs" class="page">
-        <h2>Se a nossa história fosse contada em uma revista em quadrinhos...</h2>
-        <p>[Aqui virão os quadrinhos, com ilustrações e cenas da nossa história!]</p>
+  <section>
+    <h2>Lar é onde mora o afeto e a bagunça também</h2>
+    <div class="room" onclick="alert('Sua amizade é quentinha como chá na tarde de domingo.')">Cozinha</div>
+    <div class="room" onclick="alert('É na sala onde a gente dá risada de coisas que ninguém entenderia.')">Sala</div>
+    <div class="room" onclick="alert('No banheiro, até as crises têm colo.')">Banheiro</div>
+    <div class="room" onclick="alert('Na varanda, a gente sonha e fala da vida olhando pro céu.')">Varanda</div>
+    <div class="room" onclick="alert('Cada canto tem sua bagunça, e cada bagunça tem nossa marca.')">Quarto</div>
+  </section>
 
-        <h3>Spoiler do futuro em quadrinhos</h3>
-        <p>[Versão mais velhinha de nós duas, ainda amigas, casadas e rindo das mesmas piadas!]</p>
-      </section>
+  <section>
+    <h2>Se hoje eu fosse discursar...</h2>
+    <p>
+      ...eu falaria de você com a emoção de quem fala da casa onde aprendeu a amar. Você é um abrigo nos dias nublados, uma gargalhada nas horas erradas, um colo que aparece quando eu nem percebo que preciso. Você é Lara. A minha Lara.
+    </p>
+    <p>
+      Você me socorre, me acolhe, me ouve, me entende. Às vezes, antes mesmo de eu falar. Você é a amiga que todo mundo sonha ter, e eu tenho o privilégio de te ter na vida. Eu te amo — e desejo que o mundo seja gentil com você do jeitinho que você é comigo.
+    </p>
+    <p>
+      E se o mundo fosse mais Bia e Lara, ele seria mais leve, mais engraçado, mais bonito.
+    </p>
+    <audio controls autoplay loop>
+      <source src="https://cdn.pixabay.com/audio/2021/11/15/audio_0b92d1d6d1.mp3" type="audio/mp3">
+      Seu navegador não suporta áudio.
+    </audio>
+  </section>
 
-      <section id="ese" class="page">
-        <h2>E se...</h2>
-        <div class="cards">
-          <div class="card">E se a gente tivesse se conhecido em outra vida?</div>
-          <div class="card">E se a gente tivesse uma cafeteria com nome de música?</div>
-          <div class="card">E se a gente morasse uma do lado da outra?</div>
-          <div class="card">E se a gente tivesse uma série só nossa?</div>
-        </div>
-      </section>
+</div>
 
-      <section id="discurso" class="page">
-        <h2>Se eu fosse discursar...</h2>
-        <p>Lara, se hoje eu fosse a oradora da nossa história, eu falaria sobre o quanto você é importante pra mim...</p>
-        <p>Você me acolhe, me faz rir, me socorre nos piores momentos. Você é a amiga que todo mundo deveria ter. Não a minha Lara, porque essa já é minha, mas uma Lara.</p>
-        <p>Você tem um coração tão lindo e um jeitinho que transforma os dias. Eu te amo. Obrigada por ser você.</p>
-      </section>
-    </main>
-  </div>
-  <audio id="somPorta" src="porta.mp3" preload="auto"></audio>
-  <script src="script.js"></script>
+<div class="footer">
+  Feito com carinho por Bia para Lara — 2025
+</div>
+
 </body>
 </html>
